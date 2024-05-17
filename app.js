@@ -25,6 +25,12 @@ app.use('/api/v1/vendor', paymentHistory);
 app.use('/api/v1/vendor', productDeliveryHistory);
 
 
+const acknowledgementUser = require('./routes/user-management/acknowledgement')
+//const status = require('./routes/user-management/status')
+
+app.use('/api/v1/user', acknowledgementUser);
+//app.use('/api/v1/user', status);
+
 app.use(errorMiddleware);
 
 module.exports = app; 
