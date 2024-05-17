@@ -12,6 +12,8 @@ const status = require('./routes/vendor-management/status')
 const history = require('./routes/vendor-management/history')
 const invoice = require('./routes/vendor-management/invoice')
 const payment = require('./routes/vendor-management/payment')
+const paymentHistory = require('./routes/vendor-management/paymentHistory')
+const productDeliveryHistory = require('./routes/vendor-management/productDeliveryHistory')
 
 
 app.use('/api/v1/vendor', acknowledgement);
@@ -19,6 +21,8 @@ app.use('/api/v1/vendor', status);
 app.use('/api/v1/vendor', history);
 app.use('/api/v1/vendor', invoice);
 app.use('/api/v1/vendor', payment);
+app.use('/api/v1/vendor', paymentHistory);
+app.use('/api/v1/vendor', productDeliveryHistory);
 
 
 app.use(errorMiddleware);
