@@ -43,6 +43,19 @@ app.use('/api/v1/user', paymentHistoryUser);
 app.use('/api/v1/user', productDeliveryHistoryUser);
 
 
+const rolesAdmin = require('./routes/admin-management/accessManagement/roles')
+const permissionAdmin = require('./routes/admin-management/accessManagement/permission')
+const userToAdmin = require('./routes/admin-management/enquiryManagement/user/userToAdmin')
+const adminToUser = require('./routes/admin-management/enquiryManagement/user/adminToUser')
+
+
+
+app.use('/api/v1/admin', rolesAdmin);
+app.use('/api/v1/admin', permissionAdmin);
+app.use('/api/v1/admin', userToAdmin);
+app.use('/api/v1/admin', adminToUser);
+
+
 app.use(errorMiddleware);
 
 module.exports = app; 

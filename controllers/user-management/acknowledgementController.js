@@ -39,7 +39,7 @@ exports.getSingleAcknowledgement = async (req, res, next) => {
         const acknowledgement = await Acknowledgement.findById(req.params.id);
 
         if (!acknowledgement) {
-            return next(new ErrorHandler('Tracking not found', 404));
+            return next(new ErrorHandler('Acknowledgement not found', 404));
         }
 
         res.status(200).json({
