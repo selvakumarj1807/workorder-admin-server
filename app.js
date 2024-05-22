@@ -47,13 +47,26 @@ const rolesAdmin = require('./routes/admin-management/accessManagement/roles')
 const permissionAdmin = require('./routes/admin-management/accessManagement/permission')
 const userToAdmin = require('./routes/admin-management/enquiryManagement/user/userToAdmin')
 const adminToUser = require('./routes/admin-management/enquiryManagement/user/adminToUser')
-
+const adminToVendor = require('./routes/admin-management/enquiryManagement/vendor/adminToVendor')
+const vendorToAdmin = require('./routes/admin-management/enquiryManagement/vendor/vendorToAdmin')
+const pushNotification = require('./routes/admin-management/pushNotification/pushNotification')
+const vendorQuoteReceived = require('./routes/admin-management/quoteManagement/vendorQuote/vendorQuoteReceived')
+const editQuoteAdmin = require('./routes/admin-management/quoteManagement/editQuote/editQuoteAdmin')
+const userQuoteForward = require('./routes/admin-management/quoteManagement/userQuote/userQuoteForward')
+const orderManagement = require('./routes/admin-management/orderManagement/orderManagement')
 
 
 app.use('/api/v1/admin', rolesAdmin);
 app.use('/api/v1/admin', permissionAdmin);
 app.use('/api/v1/admin', userToAdmin);
 app.use('/api/v1/admin', adminToUser);
+app.use('/api/v1/admin', adminToVendor);
+app.use('/api/v1/admin', vendorToAdmin);
+app.use('/api/v1/admin', pushNotification);
+app.use('/api/v1/admin', vendorQuoteReceived);
+app.use('/api/v1/admin', editQuoteAdmin);
+app.use('/api/v1/admin', userQuoteForward);
+app.use('/api/v1/admin', orderManagement);
 
 
 app.use(errorMiddleware);
