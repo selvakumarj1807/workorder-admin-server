@@ -54,6 +54,11 @@ const vendorQuoteReceived = require('./routes/admin-management/quoteManagement/v
 const editQuoteAdmin = require('./routes/admin-management/quoteManagement/editQuote/editQuoteAdmin')
 const userQuoteForward = require('./routes/admin-management/quoteManagement/userQuote/userQuoteForward')
 const orderManagement = require('./routes/admin-management/orderManagement/orderManagement')
+const deliveryManagementUser = require('./routes/admin-management/deliveryManagement/user/deliveryManagementUser')
+const businessSetup = require('./routes/admin-management/configurationSettings/businessSetup')
+const paymentMethod = require('./routes/admin-management/configurationSettings/paymentMethod')
+const socialMedia = require('./routes/admin-management/configurationSettings/socialMedia')
+const mailConfiguration = require('./routes/admin-management/configurationSettings/mailConfiguration')
 
 
 app.use('/api/v1/admin', rolesAdmin);
@@ -67,7 +72,16 @@ app.use('/api/v1/admin', vendorQuoteReceived);
 app.use('/api/v1/admin', editQuoteAdmin);
 app.use('/api/v1/admin', userQuoteForward);
 app.use('/api/v1/admin', orderManagement);
+app.use('/api/v1/admin', deliveryManagementUser);
+app.use('/api/v1/admin', businessSetup);
+app.use('/api/v1/admin', paymentMethod);
+app.use('/api/v1/admin', socialMedia);
+app.use('/api/v1/admin', mailConfiguration);
 
+
+const auth = require('./routes/admin-auth/auth')
+
+app.use('/api/v1',auth);
 
 app.use(errorMiddleware);
 
